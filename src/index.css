@@ -1,0 +1,88 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#root,
+#root > div,
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: unset;
+}
+
+.navbar {
+  background: #5133a4;
+  min-height: 70px;
+  position: fixed;
+  width: 100%;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  color: #fff;
+  font-size: calc(10px + 14 * (100vw - 320px) / 800);
+  z-index: 99;
+  white-space: nowrap;
+}
+
+.navbar li {
+  display: inline-block;
+  width: 33.3%;
+  text-align: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 900;
+}
+
+.header {
+  background-color: #2c323c;
+  background-image: url(https://wallpapers.com/images/featured/marvel-pictures-a8zq5u8qw3ega7cx.jpg);
+  background-repeat: repeat;
+  color: #fff;
+  min-height: 500px;
+  padding: 180px 20px;
+  padding-bottom: 140px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 4rem;
+  background-color: #5133a5cc;
+  display: inline;
+  padding: 20px 10px;
+}
+
+.App {
+  text-align: center;
+}
+
+.images {
+  margin: 3rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  align-content: center;
+  max-width: 1100px;
+}
+
+.images img {
+  cursor: pointer;
+  height: 170px;
+  width: 170px;
+  margin: 8px 25px;
+  border: 5px solid #f1f1f1;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
