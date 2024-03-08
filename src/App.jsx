@@ -22,16 +22,10 @@ const App = () => {
   ];
 
   const [score, setScore] = useState(0);
-  const [topScore, setTopScore] = useState(
-    localStorage.getItem('topScore') ? parseInt(localStorage.getItem('topScore')) : 0
-  );
+  const [topScore, setTopScore] = useState(0);
   const [clickedImages, setClickedImages] = useState([]);
   const [shuffledImages, setShuffledImages] = useState(images);
   const [alertText, setAlertText] = useState('');
-
-  useEffect(() => {
-    localStorage.setItem('topScore', topScore);
-  }, [topScore]);
 
   const handleClick = (image) => {
     if (clickedImages.includes(image)) {
@@ -76,7 +70,10 @@ const App = () => {
               key={index}
               src={image}
               alt={`Image ${index}`}
-              onClick={() => handleClick(image)}
+              onClick={() => {
+                handleClick(image);
+                handleGameEnd();
+              }}
             />
           ))}
         </div>
