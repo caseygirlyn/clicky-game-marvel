@@ -16,7 +16,7 @@ html {
 
 .navbar {
   background: #5133a4;
-  min-height: 70px;
+  min-height: 50px;
   position: fixed;
   width: 100%;
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
@@ -45,19 +45,16 @@ html {
   background-image: url(https://wallpapers.com/images/featured/marvel-pictures-a8zq5u8qw3ega7cx.jpg);
   background-repeat: repeat;
   color: #fff;
-  min-height: 500px;
-  padding: 180px 20px;
-  padding-bottom: 140px;
+  min-height: 530px;
+  padding: 240px 20px 150px;
   text-align: center;
 }
 
 .header h1 {
-  margin: 0;
-  margin-bottom: 30px;
-  font-size: 4rem;
+  font-size: 3rem;
   background-color: #5133a5cc;
-  display: inline;
-  padding: 20px 10px;
+  display: inline-block;
+  padding: 1rem 2rem;
 }
 
 .App {
@@ -85,4 +82,8 @@ html {
     0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
+}
+
+.alert{
+  display: contents;
 }

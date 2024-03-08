@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import * as bootstrap from 'bootstrap'
 import './App.css'
 
 const App = () => {
@@ -60,10 +62,12 @@ const App = () => {
   return (
     <>
       <div>
-        <nav className="navbar"><ul>
-          <li className="brand"><a href="/">Clicky Game</a></li>
-          <li className=""><div className="alert">{alertText}</div></li>
-          <li>Score: {score} | Top Score: {topScore}</li></ul>
+        <nav className="navbar">
+          <ul className='m-0 p-0 w-100'>
+            <li className="brand"><a href="/">Clicky Game</a></li>
+            <li className=""><div className="alert mb-0 d-contents">{alertText}</div></li>
+            <li>Score: {score} | Top Score: {topScore}</li>
+          </ul>
         </nav>
         <header className="header"><h1>Clicky Game!</h1><h2>Click on an image to earn points, but don't click on any more than once!</h2></header>
         <div className="images">
@@ -76,6 +80,14 @@ const App = () => {
             />
           ))}
         </div>
+        <footer className="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
+          <div className="d-flex align-items-center">
+            <a href="/" className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+              <svg className="bi" width="30" height="24"><use xlinkHref="#bootstrap"></use></svg>
+            </a>
+            <span className="text-muted">© 2024 Girlyn Casey</span>
+          </div>
+        </footer>
       </div>
 
     </>
