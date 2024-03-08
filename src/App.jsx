@@ -37,12 +37,12 @@ const App = () => {
     if (clickedImages.includes(image)) {
       setScore(0);
       setClickedImages([]);
-      setAlertText('Incorrect guess! Game over.');
+      setAlertText('Game over!');
       shuffleImages();
     } else {
       setScore(score + 1);
       setClickedImages([...clickedImages, image]);
-      setAlertText('Correct guess! Keep going.');
+      setAlertText('Keep going!');
       shuffleImages();
     }
   };
