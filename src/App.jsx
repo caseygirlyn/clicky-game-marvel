@@ -46,7 +46,7 @@ const App = () => {
       setCorrectGuessAlert(true);
       setTimeout(() => {
         setCorrectGuessAlert(false);
-      }, 1000); 
+      }, 600); 
       shuffleImages();
     }
   };
@@ -69,8 +69,8 @@ const App = () => {
           <ul className='m-0 p-0 w-100'>
             <li className="brand"><a href="/">Clicky Game</a></li>
             <li>
-            {correctGuessAlert && <div className="alert">Keep Going!</div>}
-            {shaking && <div className="shake">Game Over!</div>}
+            {(correctGuessAlert && !shaking)&& <div className="alert">Keep Going!</div>}
+            {(shaking && !correctGuessAlert) && <div className="shake">Game Over!</div>}
             </li>
             <li>Score: {score} | Top Score: {topScore}</li>
           </ul>
