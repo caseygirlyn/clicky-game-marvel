@@ -79,6 +79,50 @@ html {
   cursor: pointer;
 }
 
-.alert{
+.alert {
   display: contents;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+  color: rgb(255, 70, 70);
+}
+
+.alert {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import * as bootstrap from 'bootstrap'
 import './App.css'
@@ -8,7 +6,6 @@ import './App.css'
 const App = () => {
 
   const images = [];
-
   // Loop to store 36 images
   for (let i = 1; i <= 36; i++) {
     const imageName = `${i}.png`;
@@ -17,21 +14,40 @@ const App = () => {
   }
 
   const [score, setScore] = useState(0);
-  const [topScore, setTopScore] = useState(0);
   const [clickedImages, setClickedImages] = useState([]);
   const [shuffledImages, setShuffledImages] = useState(images);
-  const [alertText, setAlertText] = useState('');
+  const [shaking, setShaking] = useState(false);
+  const [correctGuessAlert, setCorrectGuessAlert] = useState(false);
+  const [topScore, setTopScore] = useState(
+    localStorage.getItem('topScore') ? parseInt(localStorage.getItem('topScore')) : 0
+  );
+
+  useEffect(() => {
+    localStorage.setItem('topScore', topScore);
+  }, [topScore]);
+
+  const handleShake = () => {
+    setShaking(true);
+    setTimeout(() => {
+      setShaking(false);
+    }, 1000);
+  };
 
   const handleClick = (image) => {
     if (clickedImages.includes(image)) {
       setScore(0);
       setClickedImages([]);
-      setAlertText('Game over!');
+      handleShake();
+      handleGameEnd();
       shuffleImages();
     } else {
       setScore(score + 1);
       setClickedImages([...clickedImages, image]);
-      setAlertText('Keep going!');
+      setCorrectGuessAlert(true);
+      setTimeout(() => {
+        setCorrectGuessAlert(false);
+      }, 1000); 
+      setAlertText('');
       shuffleImages();
     }
   };
@@ -47,14 +63,16 @@ const App = () => {
     }
   };
 
-
   return (
     <>
       <div>
         <nav className="navbar">
           <ul className='m-0 p-0 w-100'>
             <li className="brand"><a href="/">Clicky Game</a></li>
-            <li><div className="alert mb-0 d-contents">{alertText}</div></li>
+            <li>
+            {correctGuessAlert && <div className="alert">Keep Going!</div>}
+            {shaking && <div className="shake">Game Over!</div>}
+            </li>
             <li>Score: {score} | Top Score: {topScore}</li>
           </ul>
         </nav>
@@ -67,7 +85,6 @@ const App = () => {
               alt={`Image ${index}`}
               onClick={() => {
                 handleClick(image);
-                handleGameEnd();
               }}
             />
           ))}
@@ -81,7 +98,6 @@ const App = () => {
           </div>
         </footer>
       </div>
-
     </>
   )
 }
