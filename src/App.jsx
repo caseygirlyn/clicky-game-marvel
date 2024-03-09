@@ -76,6 +76,7 @@ const App = () => {
           </ul>
         </nav>
         <header className="header"><h1>Clicky Game!</h1><h2>Click on an image to earn points, but don't click on any more than once!</h2></header>
+        <span className="text-secondary attribution"><a href="https://wallpapers.com/picture/marvel-pictures-a8zq5u8qw3ega7cx.html" className='text-secondary'>Wallpaper by tammarn</a> on Wallpapers.com</span>
         <div className="images">
           {shuffledImages.map((image, index) => (
             <img

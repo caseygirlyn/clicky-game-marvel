@@ -83,6 +83,10 @@ html {
   display: contents;
 }
 
+.attribution{
+  font-size: 12px;
+}
+
 @keyframes shake {
   0% {
     transform: translateX(0);
