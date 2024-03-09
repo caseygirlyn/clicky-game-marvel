@@ -6,20 +6,15 @@ import * as bootstrap from 'bootstrap'
 import './App.css'
 
 const App = () => {
-  const images = [
-    '/images/1.png',
-    '/images/2.png',
-    '/images/3.png',
-    '/images/4.png',
-    '/images/5.png',
-    '/images/6.png',
-    '/images/7.png',
-    '/images/8.png',
-    '/images/9.png',
-    '/images/10.png',
-    '/images/11.png',
-    '/images/12.png',
-  ];
+
+  const images = [];
+
+  // Loop to store 36 images
+  for (let i = 1; i <= 36; i++) {
+    const imageName = `${i}.png`;
+    const imageUrl = `/images/${imageName}`;
+    images.push(imageUrl);
+  }
 
   const [score, setScore] = useState(0);
   const [topScore, setTopScore] = useState(0);
@@ -59,7 +54,7 @@ const App = () => {
         <nav className="navbar">
           <ul className='m-0 p-0 w-100'>
             <li className="brand"><a href="/">Clicky Game</a></li>
-            <li className=""><div className="alert mb-0 d-contents">{alertText}</div></li>
+            <li><div className="alert mb-0 d-contents">{alertText}</div></li>
             <li>Score: {score} | Top Score: {topScore}</li>
           </ul>
         </nav>
