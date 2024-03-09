@@ -37,9 +37,9 @@ const App = () => {
     if (clickedImages.includes(image)) {
       setScore(0);
       setClickedImages([]);
+      shuffleImages();
       handleShake();
       handleGameEnd();
-      shuffleImages();
     } else {
       setScore(score + 1);
       setClickedImages([...clickedImages, image]);
@@ -47,7 +47,6 @@ const App = () => {
       setTimeout(() => {
         setCorrectGuessAlert(false);
       }, 1000); 
-      setAlertText('');
       shuffleImages();
     }
   };
